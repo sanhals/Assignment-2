@@ -1,0 +1,175 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Admin</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="userCtrl" role="document">
+    <div class="container">
+        <div class="page-header">
+            <h1>
+                ISEM 551-01</h1>
+        </div>
+        <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="home.htm">Home</a></li>
+              <li class="active"><a href="admin.htm">Admin</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->         
+         
+        <table class="table table-striped" >
+            <thead>
+                <tr align="center">
+                    <th>
+                        Edit
+                    </th>
+                    <th>
+                        First Name
+                    </th>
+                    <th>
+                        Last Name
+                    </th>
+                    <th>
+                        Address
+                    </th>
+                    <th>
+                        City
+                    </th>
+                    <th>
+                        State
+                    </th>
+                    <th>
+                        Postal Code 
+                    </th>
+                    <th>
+                        Phone Number
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="user in users">
+                    <td>
+                        <button class="btn" ng-click="editUser(user.id)">
+                            <span class="glyphicon glyphicon-pencil"></span> Edit
+                        </button>
+                    </td>
+                    <td>
+                        {{ user.fName }}
+                    </td>
+                    <td>
+                        {{ user.lName }}
+                    </td>
+                    <td>
+                        {{ user.address }}                    
+                    </td>
+                    <td>
+                        {{ user.city }}
+                    </td>
+                    <td>
+                       {{ user.state }}
+                    </td>
+                    <td>
+                        {{ user.postalcode }}
+                    </td>
+                    <td>
+                        {{ user.phoneno }}                    
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <hr>
+        <button class="btn btn-success" style="background-color: #142DE6; border-color:#142DE6" ng-click="editUser('new')">
+            <span class="glyphicon glyphicon-user" ></span> SignUp   
+        </button>
+        <hr>
+        <h3 ng-show="edit">
+            SignUp:</h3>
+        <h3 ng-hide="edit">
+            Edit User:</h3>
+        <form class="form-horizontal">
+        <div class="form-group">
+            <label class="col-sm-2 control-label">
+                First Name:</label>
+            <div class="col-sm-10">
+                <input type="text" ng-model="fName" ng-disabled="!edit" placeholder="First Name" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">
+                Last Name:</label>
+            <div class="col-sm-10">
+                <input type="text" ng-model="lName" ng-disabled="!edit" placeholder="Last Name" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">
+              Address:</label>
+            <div class="col-sm-10">
+                <input type="text" ng-model="address" ng-disabled="!edit" placeholder="Address" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">
+                City:</label>
+            <div class="col-sm-10">
+                <input type="text" ng-model="city" ng-disabled="!edit" placeholder="City" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">
+                State:</label>
+            <div class="col-sm-10">
+                <input type="text" ng-model="state" ng-disabled="!edit" placeholder="State" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">
+                Postal Code:</label>
+            <div class="col-sm-10">
+                <input type="text" ng-model="postalcode" ng-disabled="!edit" placeholder="Postal Code" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">
+                Phone Number:</label>
+            <div class="col-sm-10">
+                <input type="text" ng-model="phoneno" ng-disabled="!edit" placeholder="Phone Number" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">
+                Password:</label>
+            <div class="col-sm-10">
+                <input type="password" ng-model="passw1" placeholder="Password" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">
+                Repeat:</label>
+            <div class="col-sm-10">
+                <input type="password" ng-model="passw2" placeholder="Repeat Password" />
+            </div>
+        </div>
+        </form>
+        <hr>
+        <button class="btn btn-success" style="background-color: #142DE6; border-color:#142DE6;" ng-disabled="error || incomplete">
+            <span class="glyphicon glyphicon-save"></span>Save Changes
+        </button>
+        <hr>
+    </div>
+    <script src="admin.js"></script>
+    </nav>
+    </div>
+</body>
+</html>

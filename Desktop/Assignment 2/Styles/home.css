@@ -1,0 +1,55 @@
+﻿body {
+}
+.diet-pic {
+    width: 135px;
+    float: left;
+    position: relative;
+}
+.diet-details {
+    margin-left: 140px;
+    padding-top: 5px;
+}
+.diet-pic img.food {
+    z-index: 0;
+    position: absolute;
+    left: 0px;
+    top: 5px;
+    padding-top: 20px;
+}
+.center {
+    text-align: center;
+}
+.h-taut {
+    margin-bottom: 5px;
+    color: #005ea6;
+}
+a {
+    color: #005ea6;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+.h-bigger {
+    font-size: 28px;
+    color: #005ea6;
+}
+.pros-cons {
+    width: 300px;
+    padding: 2px 15px;
+}
+.box-steelgrey {
+    background: #eaf0f1;
+}
+.thumb-right,
+.thumb-right-flush {
+    float: right;
+    margin: 0 0 10px 10px;
+}
+.pros-cons ul li {
+    list-style: none outside;
+    padding: 0 0 0 5px;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    margin: 5px 0;
+}
